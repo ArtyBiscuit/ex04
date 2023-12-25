@@ -55,9 +55,9 @@ int	main(void)
 		delete animals[i];
 	}
 	std::cout << std::endl;
-	Dog basic;
+	Cat basic;
 	{
-		Dog tmp = basic;
+		Cat tmp = basic;
 	}
 	return (0);
 }

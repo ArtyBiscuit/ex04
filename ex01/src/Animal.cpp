@@ -1,4 +1,4 @@
-#include "Animal.hpp"
+#include "../inc/Animal.hpp"
 
 // CANONICAL FORM
 //  DEFAULT CONSTRUCT
@@ -22,17 +22,17 @@ Animal::~Animal(void)
 //  COPY ASSIGNENENT OVERLOAD
 Animal	&Animal::operator=(const Animal &src)
 {
+	std::cout << "Animal: Copy assignement overload" << std::endl;
 	if (this != &src)
 		this->setType(src.getType());
-	std::cout << "Animal: Copy assignement overload" << std::endl;
 	return (*this);
 }
 
 //  COPY CONSTRUCTOR
 Animal::Animal(const Animal &src)
 {
-	*this = src;
 	std::cout << "Animal: Copy contsructor" << std::endl;
+	*this = src;
 }
 
 std::string	Animal::getType(void) const

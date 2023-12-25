@@ -4,9 +4,9 @@
 //  DEFAULT CONSTRUCT
 Brain::Brain(void)
 {
+	std::cout << "Brain: Default constructor" << std::endl;
 	for (int i = 0; i < NB_IDEA; i++)
 		this->_ideas[i].clear();
-	std::cout << "Brain: Default constructor" << std::endl;
 }
 
 //  DESTRUCTOR
@@ -19,15 +19,15 @@ Brain::~Brain(void)
 Brain	&Brain::operator=(const Brain &src)
 {
 	// DEEP COPY MEAN, COPY VALUE ONE BY ONE
+	std::cout << "Brain: Copy assignement overload" << std::endl;
 	for (int i = 0; i < NB_IDEA; i++)
 		this->_ideas[i] = src._ideas[i];
-	std::cout << "Brain: Copy assignement overload" << std::endl;
 	return (*this);
 }
 
 //  COPY CONSTRUCTOR
 Brain::Brain(const Brain &src)
 {
-	*this = src;
 	std::cout << "Brain: Copy contsructor" << std::endl;
+	*this = src;
 }

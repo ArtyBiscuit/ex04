@@ -4,33 +4,32 @@
 //  DEFAULT CONSTRUCT
 Dog::Dog(void): Animal("Dog")
 {
-	this->_brain = new Brain();
 	std::cout << "Dog: Default constructor" << std::endl;
+	this->_brain = new Brain();
 }
 
 //  DESTRUCTOR
 Dog::~Dog(void)
 {
-	std::cout << "Dog: Destructor" << std::endl;
 	delete this->_brain;
+	std::cout << "Dog: Destructor" << std::endl;
 }
 
 //  COPY ASSIGNENENT OVERLOAD
 Dog	&Dog::operator=(const Dog &src)
 {
-	this->setType(src.getType());
-	if (this->_brain)
-		delete this->_brain;
-	this->_brain = new Brain(*src._brain);
 	std::cout << "Dog: Copy assignement overload" << std::endl;
+	this->setType(src.getType());
+	delete this->_brain;
+	this->_brain = new Brain(*src._brain);
 	return (*this);
 }
 
 //  COPY CONSTRUCTOR
 Dog::Dog(const Dog &src): Animal("Dog")
 {
-	*this = src;
 	std::cout << "Dog: Copy contsructor" << std::endl;
+	this->_brain = new Brain(*src._brain);
 }
 
 void	Dog::makeSound(void) const
